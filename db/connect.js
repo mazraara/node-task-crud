@@ -1,3 +1,5 @@
+//setting up mongodb connection using mongoose
+
 const mongoose = require('mongoose')
 
 const connectDb = (url) => {
@@ -9,4 +11,5 @@ const connectDb = (url) => {
     })
 }    
 
+//export connection method to be used in the app.js file
 module.exports = connectDb  
