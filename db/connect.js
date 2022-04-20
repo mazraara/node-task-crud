@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 
-const connectionString = 'mongodb+srv://staann:_Staann_01@nodeexpressproject.k1k5s.mongodb.net/TaskManager?retryWrites=true&w=majority'
-
 const connectDb = (url) => {
     return mongoose.connect(url, {
         useNewUrlParser: true,
@@ -11,4 +9,4 @@ const connectDb = (url) => {
     })
 }    
 
-module.exports = connectDb
+module.exports = connectDb  
