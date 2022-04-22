@@ -1,18 +1,15 @@
-const connectDb = require('./db/connect')
 const express = require('express')
 const app = express()
-const tasks = require('./routes/tasksRoute')
+const tasks = require('./routes/tasks')
+const connectDb = require('./db/connect')
 require('dotenv').config() //getting connection string from environment variable
 
 
 //middlewear
-
+app.use(express.static('./public'))
 app.use(express.json())
 
 //routes
-app.get('/hello', (req, res) =>{
-    res.status(200).send('Hello world')
-})
 app.use('/api/v1/tasks',tasks)
 
  

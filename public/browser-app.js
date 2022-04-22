@@ -6,10 +6,12 @@ const formAlertDOM = document.querySelector('.form-alert')
 // Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
+
   try {
     const {
       data: { tasks },
     } = await axios.get('/api/v1/tasks')
+    console.log("data")
     if (tasks.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
       loadingDOM.style.visibility = 'hidden'
@@ -43,7 +45,6 @@ const showTasks = async () => {
   }
   loadingDOM.style.visibility = 'hidden'
 }
-
 showTasks()
 
 // delete task /api/tasks/:id
